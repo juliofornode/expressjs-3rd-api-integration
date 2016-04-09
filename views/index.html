@@ -1,13 +1,36 @@
-<!DOCTYPE html>
-<html lang="en">
+<!DOCTYPE html lang="en">
+<html>
 <head>
-    <meta charset="UTF-8">
-    <title>{{title}}</title>
+    <link type="text/css" href="css/flatly-bootstrap.min.css" rel="stylesheet" />
+    <link type="text/css" href="css/bootstrap-responsive.min.css" rel="stylesheet"/>
 </head>
-<body>
 
-    <p>This is the home page.</p>
-    <p>And this is the title: {{title}}</p>
+<body class="container">
+<div class="row">
+    <h1>{{title}}<small> by {{author.name}}</small></h1>
+    <p>{{description}}</p>
+</div>
+<div class="row">
 
+
+        <ul class="thumbnails">
+
+            {{#each elements}}
+            <li class="span4">
+
+                <a class="thumbnail" href="{{permalink}}" target="_blank">
+                    <img src="{{data.image.src}}" title="{{data.image.caption}}" />
+                </a>
+
+            </li>
+            {{/each}}
+
+        </ul>
+
+
+
+</div>
+<script src="https://npmcdn.com/masonry-layout@4.0/dist/masonry.pkgd.min.js"></script>
 </body>
+
 </html>
