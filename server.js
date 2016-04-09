@@ -23,16 +23,11 @@ app.use(express.static(__dirname + '/public'));
 //routes
 var user = 'otsebyatin';
 var story_slug = 'kazan2015-luchshie-snimki';
-var api_key = "";
-var username = "";
-var _token = "";
 
 app.get('/',function(req, res){
     //Fetch elements from Storify API
-    superagent.get("http://api.storify.com/v1/stories/" + user + "/" + story_slug)
-        .query({api_key: api_key,
-            username: username,
-            _token: _token})
+    superagent
+        .get("http://api.storify.com/v1/stories/" + user + "/" + story_slug)
         .set({  Accept: 'application/json' })
         .end(function(error, storifyResponse){
             if (error) next(error);
