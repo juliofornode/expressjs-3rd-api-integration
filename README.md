@@ -16,10 +16,10 @@ template engine.
 
 ## Standard structure of server.js
 
-1) App dependencies: npm and own modules.
-2) App instantiation.
-3) DB connection.
-4) App settings configuration.
-5) Define middleware: static files, views, view engine, error handlers, etc.
-6) Define routes and request handlers.
-7) Start app in the server on a particular host and port.
+1. App dependencies: npm and own modules.
+2. App instantiation.
+3. DB connection.
+4. App settings configuration.
+5. Define middleware: static files, views, view engine, error handlers, etc.
+6. Define routes and request handlers.
+7. Start app in the server on a particular host and port.
