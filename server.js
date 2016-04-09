@@ -1,6 +1,6 @@
 //dependencies
 var express = require('express');
-var routes = require('./routes');
+var consolidate = require('consolidate');
 
 
 //app instantiation
@@ -8,10 +8,22 @@ var app = express();
 
 
 //app configuration
-var port = 3000;
+app.set('views', __dirname + '/views');
+app.engine('html', consolidate.handlebars);
+app.set('view engine', 'html');
+app.set('port', 3000);
+var port = app.get('port');
+
 
 //middleware
-app.get('/', routes.index);
+app.use(express.static(__dirname + '/public'));
+
+
+//routes
+app.get('/', function(req, res) {
+    res.render('index', {title: "Hello World!"});
+});
+
 
 //server
 app.listen(port, function() {
